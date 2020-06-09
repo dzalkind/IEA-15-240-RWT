@@ -7,6 +7,7 @@
 *.ech
 *.bts
 *.dbg
+*.lin
 
 # HAWC2
 HAWC2/bodyeig/*
@@ -102,3 +103,4 @@ Thumbs.db
 # Visual Studio Code #
 ######################
 .vscode/
+OpenFAST/IEA-15-240-RWT-Monopile-Lin/IEA-15-240-RWT-Monopile.2.lin
