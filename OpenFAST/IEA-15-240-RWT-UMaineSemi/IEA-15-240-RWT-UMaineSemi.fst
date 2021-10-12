@@ -16,7 +16,7 @@ True                  Echo        - Echo input data to <RootName>.ech (flag)
       1   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn} 
       1   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn} 
       0   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
-      3   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex} 
+      1   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex} 
       0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn} 
 ---------------------- INPUT FILES --------------------------------------------- 
 "IEA-15-240-RWT-UMaineSemi_ElastoDyn.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string) 
@@ -28,7 +28,7 @@ True                  Echo        - Echo input data to <RootName>.ech (flag)
 "IEA-15-240-RWT-UMaineSemi_ServoDyn.dat"    ServoFile       - Name of file containing control and electrical-drive input parameters (quoted string) 
 "IEA-15-240-RWT-UMaineSemi_HydroDyn.dat"      HydroFile       - Name of file containing hydrodynamic input parameters (quoted string) 
 "unused"      SubFile         - Name of file containing sub-structural input parameters (quoted string) 
-"IEA-15-240-RWT-UMaineSemi_MoorDyn.dat"      MooringFile     - Name of file containing mooring system input parameters (quoted string) 
+"IEA-15-240-RWT-UMaineSemi_MAP.dat"      MooringFile     - Name of file containing mooring system input parameters (quoted string) 
 "unused"      IceFile         - Name of file containing ice input parameters (quoted string) 
 ---------------------- OUTPUT -------------------------------------------------- 
 False                  SumPrint    - Print summary data to "<RootName>.sum" (flag) 
@@ -40,8 +40,8 @@ default                DT_Out      - Time step for tabular output (s) (or "defau
 True                   TabDelim    - Use tab delimiters in text tabular output file? (flag) {uses spaces if false} 
 "ES10.3E2"             OutFmt      - Format used for text tabular output, excluding the time channel.  Resulting field should be 10 characters. (quoted string) 
 ---------------------- LINEARIZATION ------------------------------------------- 
-False                  Linearize   - Linearization analysis (flag)
-False                  CalcSteady  - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)
+True                  Linearize   - Linearization analysis (flag)
+True                  CalcSteady  - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)
 3                      TrimCase    - Controller parameter to be trimmed {1:yaw; 2:torque; 3:pitch} [used only if CalcSteady=True] (-)
 0.001                  TrimTol     - Tolerance for the rotational speed convergence [used only if CalcSteady=True] (-)
 0.01                   TrimGain    - Proportional gain for the rotational speed error (>0) [used only if CalcSteady=True] (rad/(rad/s) for yaw or pitch; Nm/(rad/s) for torque)
