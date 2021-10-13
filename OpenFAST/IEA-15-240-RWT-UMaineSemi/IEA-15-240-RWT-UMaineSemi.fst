@@ -3,8 +3,8 @@ IEA 15 MW offshore reference model on UMaine VolturnUS-S semi-submersible floati
 ---------------------- SIMULATION CONTROL -------------------------------------- 
 True                  Echo        - Echo input data to <RootName>.ech (flag) 
 "FATAL"                AbortLevel  - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"} 
-10.0                   TMax        - Total run time (s) 
-0.025                  DT          - Integration time step (s)  
+2000.0                   TMax        - Total run time (s) 
+0.01                   DT          - Recommended module time step (s)
 2                      InterpOrder - Interpolation order for input/output time history (-) {1=linear, 2=quadratic} 
 0                      NumCrctn    - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections} 
 99999.0                DT_UJac     - Time between calls to get Jacobians (s) 
@@ -16,7 +16,7 @@ True                  Echo        - Echo input data to <RootName>.ech (flag)
       1   CompServo       - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn} 
       1   CompHydro       - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn} 
       0   CompSub         - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
-      1   CompMooring     - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex} 
+1                      CompMooring - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
       0   CompIce         - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn} 
 ---------------------- INPUT FILES --------------------------------------------- 
 "IEA-15-240-RWT-UMaineSemi_ElastoDyn.dat"    EDFile          - Name of file containing ElastoDyn input parameters (quoted string) 
@@ -44,7 +44,7 @@ True                  Linearize   - Linearization analysis (flag)
 True                  CalcSteady  - Calculate a steady-state periodic operating point before linearization? [unused if Linearize=False] (flag)
 3                      TrimCase    - Controller parameter to be trimmed {1:yaw; 2:torque; 3:pitch} [used only if CalcSteady=True] (-)
 0.001                  TrimTol     - Tolerance for the rotational speed convergence [used only if CalcSteady=True] (-)
-0.01                   TrimGain    - Proportional gain for the rotational speed error (>0) [used only if CalcSteady=True] (rad/(rad/s) for yaw or pitch; Nm/(rad/s) for torque)
+0.0001                 TrimGain    - Proportional gain for the rotational speed error (>0) [used only if CalcSteady=True] (rad/(rad/s) for yaw or pitch; Nm/(rad/s) for torque)
 0                      Twr_Kdmp    - Damping factor for the tower [used only if CalcSteady=True] (N/(m/s))
 0                      Bld_Kdmp    - Damping factor for the blades [used only if CalcSteady=True] (N/(m/s))
 2                      NLinTimes   - Number of times to linearize (-) [>=1] [unused if Linearize=False]

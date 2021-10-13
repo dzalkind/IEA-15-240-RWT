@@ -25,7 +25,7 @@ True                   GenTiStp    - Method to stop the generator {T: timed usin
 0.0                    TimGenOn    - Time to turn on the generator for a startup (s) [used only when GenTiStr=True]
 9999.9                 TimGenOf    - Time to turn off the generator (s) [used only when GenTiStp=True]
 ---------------------- SIMPLE VARIABLE-SPEED TORQUE CONTROL --------------------
-7.56                   VS_RtGnSp   - Rated generator speed for simple variable-speed generator control (HSS side) (rpm) [used only when VSContrl=1]
+6.0                   VS_RtGnSp   - Rated generator speed for simple variable-speed generator control (HSS side) (rpm) [used only when VSContrl=1]
 19947760.56251191      VS_RtTq     - Rated generator torque/constant generator torque in Region 3 for simple variable-speed generator control (HSS side) (N-m) [used only when VSContrl=1]
 437898.87522915896     VS_Rgn2K    - Generator torque constant in Region 2 for simple variable-speed generator control (HSS side) (N-m/rpm^2) [used only when VSContrl=1]
 10.0                   VS_SlPc     - Rated generator slip percentage in Region 2 1/2 for simple variable-speed generator control (%) [used only when VSContrl=1]
